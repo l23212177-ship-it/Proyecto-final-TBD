@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de UPP</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .primary {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+        }
+        .primary h2, .primary p {
+            color: white;
+        }
+        .stats {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            grid-column: span 2;
+        }
+        .stats h2, .stats p {
+            color: white;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Sistema de Gestión Para Monitoreo de UPP</h1>
+            <p>Monitoreo en tiempo real de pacientes con sensores de camilla abcdef</p>
+        </div>
+        
+        <div class="dashboard">
+            <a href="/pacientes" class="card">
+                <div class="card-icon">📋</div>
+                <h2>Ver Pacientes Registrados</h2>
+                <p>Consulta la lista completa de pacientes con sus datos de monitoreo, temperaturas y niveles de movimiento.</p>
+            </a>
+            
+            <div class="card stats">
+                <div class="card-icon">📊</div>
+                <h2>Sistema de Monitoreo</h2>
+                <p>Monitoreo automático de 6 cuadrantes con sensores de temperatura y movimiento. Generación de umbrales dinámicos.</p>
+                <div style="margin-top: 20px; font-size: 0.9em;">
+                    <p>• 6 sensores de temperatura por camilla</p>
+                    <p>• 6 sensores de movimiento por camilla</p>
+                    <p>• Umbrales dinámicos generados automáticamente</p>
+                </div>
+            </div>
+            
+            <div class="card primary">
+                <div class="card-icon">🔄</div>
+                <h2>Datos en Tiempo Real</h2>
+                <p>Los datos se actualizan automáticamente cada vez que visitas la página de pacientes, generando información nueva aleatoria.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Sistema desarrollado para gestión hospitalaria | Versión 2.0</p>
+        </div>
+    </div>
+</body>
+</html>
